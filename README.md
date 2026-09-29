@@ -2,6 +2,8 @@
 
 AI Architecture · Systems Engineering · Product Engineering
 
+Stockholm, Sweden · [nima.khaki@bistam.com](mailto:nima.khaki@bistam.com)
+
 I work across software architecture, backend systems, data platforms, native applications and production infrastructure.
 
 My work ranges from APIs, databases and distributed workflows to native mobile systems, payments, geospatial services, hardware integrations and production operations. I also build engineering systems around AI, MCP and agent orchestration for working with large codebases, verification and software delivery.
