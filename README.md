@@ -2,7 +2,7 @@
 
 AI Architecture · Systems Engineering · Product Engineering
 
-Stockholm, Sweden · [nima.khaki@bistam.com](mailto:nima.khaki@bistam.com)
+🇸🇪 Stockholm, Sweden · [nima.khaki@bistam.com](mailto:nima.khaki@bistam.com)
 
 I work across software architecture, backend systems, data platforms, native applications and production infrastructure.
 
