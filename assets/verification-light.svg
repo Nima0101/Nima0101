@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="72" viewBox="0 0 840 72" role="img" aria-labelledby="title desc">
+  <title id="title">Inspect and replay</title>
+  <desc id="desc">A sequence of states branches to a marked failure. A dashed replay path returns to an earlier state.</desc>
+  <rect width="840" height="72" rx="8" fill="#f6f8fa"/>
+  <g fill="none" stroke="#576779" stroke-width="2">
+    <path d="M32 36H808"/>
+    <path d="M320 36L352 14H512L544 36"/>
+    <path d="M576 36L608 58H704L736 36"/>
+    <path d="M496 14V58H224V43" stroke-dasharray="4 5"/>
+    <path d="M219 49L224 43L229 49"/>
+  </g>
+  <g fill="#f6f8fa" stroke="#176b61" stroke-width="2.5">
+    <circle cx="64" cy="36" r="5"/>
+    <circle cx="224" cy="36" r="5"/>
+    <circle cx="384" cy="36" r="5"/>
+    <circle cx="544" cy="36" r="5"/>
+    <circle cx="704" cy="36" r="5"/>
+    <circle cx="784" cy="36" r="5"/>
+  </g>
+  <path d="M416 8L422 14L416 20L410 14Z" fill="#f6f8fa" stroke="#946200" stroke-width="2"/>
+  <path d="M493 11L499 17M499 11L493 17" stroke="#946200" stroke-width="2.5"/>
+  <path d="M648 58H664" stroke="#176b61" stroke-width="4"/>
+</svg>

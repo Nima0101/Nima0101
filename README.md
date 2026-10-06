@@ -1,49 +1,36 @@
 # Nima Khaki
 
-AI Architecture · Systems Engineering · Product Engineering
+**Systems & software engineering**
 
-🇸🇪 Stockholm, Sweden · [nima.khaki@bistam.com](mailto:nima.khaki@bistam.com)
+I build tools that make failure modes inspectable: how data survives a crash, how contracts change, and how to reproduce what went wrong.
 
-I work across software architecture, backend systems, data platforms, native applications and production infrastructure.
+[nima.khakii@outlook.com](mailto:nima.khakii@outlook.com)
 
-My work ranges from APIs, databases and distributed workflows to native mobile systems, payments, geospatial services, hardware integrations and production operations. I also build engineering systems around AI, MCP and agent orchestration for working with large codebases, verification and software delivery.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/verification-dark.svg">
+  <img src="assets/verification-light.svg" alt="A state trace branches at a failure, with a dashed path returning to replay an earlier state." width="840">
+</picture>
 
-## AI Architecture
+## Selected open source
 
-MCP servers, agent orchestration, repository intelligence, engineering automation, task planning, impact analysis, verification systems, controlled AI workflows and production evidence.
+### [PersistScope](https://github.com/Nima0101/persistscope) · C++20
 
-## Backend & Systems
+A crash-consistency model checker for small persistence protocols, with replayable counterexamples. Explore writes, syncs, renames and recovery; distinguish a complete result under the model from an exhausted search budget.
 
-Node.js, TypeScript, REST APIs, authentication, authorization, multi tenant systems, webhooks, state machines, background workers, idempotency, retries, reconciliation and external service integrations.
+[Model & limits](https://github.com/Nima0101/persistscope/blob/main/docs/architecture.md) · [CI](https://github.com/Nima0101/persistscope/actions/workflows/ci.yml) · [Releases](https://github.com/Nima0101/persistscope/releases)
 
-## Data Engineering
+### [hidweave](https://github.com/Nima0101/hidweave) · Rust
 
-PostgreSQL, PostGIS, Supabase, SQL, Python, ETL, source contracts, data ingestion, normalization, provenance, scheduling, durable jobs, versioned publication, read models and audit trails.
+An offline library and CLI for comparing Human Interface Device (HID) report contracts. Decode identical bytes under two descriptors to expose changes in meaning, including an X/Y swap that leaves report length unchanged.
 
-## Native & Device Systems
+[Contract & limits](https://github.com/Nima0101/hidweave/blob/main/docs/contract.md) · [CI](https://github.com/Nima0101/hidweave/actions/workflows/ci.yml) · [Releases](https://github.com/Nima0101/hidweave/releases)
 
-Swift, SwiftUI, Kotlin, iOS, Android, Keychain, APNs, location services, native maps, App Store delivery, network printing, IPP, AirPrint, Bonjour, Epson, Star, ChromeOS and native desktop tooling.
+Both ship Linux, macOS and Windows binaries, with public CI covering tests, sanitizers, fuzzing checks and CodeQL analysis.
 
-## Web Engineering
+## Engineering approach
 
-Next.js, React, React Server Components, TypeScript, server rendering, responsive interfaces, accessibility, technical SEO, structured data, sitemaps, internationalization, browser verification and Core Web Vitals.
+- **Correctness:** explicit invariants, bounded models and versioned contracts.
+- **Developer tooling:** useful diagnostics, reproducible examples and inspectable failure evidence.
+- **Delivery:** verify library consumers, CLI behavior and release packaging; document the limits alongside the result.
 
-## Infrastructure & Reliability
-
-Docker, Cloudflare, Hetzner, Coolify, GitHub Actions, CI/CD, Sentry, observability, health and readiness, incident handling, release gates, deployment verification and rollback.
-
-## Payments & Integrations
-
-Stripe, Stripe Connect, Apple Pay, payment flows, refunds, payouts, settlement, POS integrations, booking providers, Google Maps, email, push notifications and provider webhooks.
-
-## Engineering
-
-Architecture boundaries, automated testing, contract testing, native verification, security boundaries, least privilege access, release engineering, root cause analysis and production focused verification.
-
-## Stack
-
-`TypeScript`　`JavaScript`　`Python`　`SQL`　`Swift`　`Kotlin`
-
-`Node.js`　`Next.js`　`React`　`PostgreSQL`　`PostGIS`　`Supabase`
-
-`Docker`　`Cloudflare`　`GitHub Actions`　`Sentry`　`Stripe`　`MCP`
+For AI-assisted work, I require explicit constraints, adversarial review and executable checks. Generated changes must satisfy the same contracts as any other implementation.
