@@ -106,7 +106,9 @@ The verification and delivery toolkit includes CMake, CTest, XCTest, GitHub Acti
 
 Start with the invariant, identify its owner and define the failure states. Make uncertainty explicit, bound resource use and keep recovery repeatable. Then build checks that can contradict the design: competing owners, expired leases, account changes, interrupted writes, malformed data and delayed events. A useful counterexample is small enough to explain and replay.
 
-AI agents have assisted implementation and review, including the standalone C++ samples. My responsibilities are constraints, architecture, review, acceptance and verification. Generated changes need executable evidence and adversarial review. Source inspection, local tests, historical CI, release artifacts and live verification answer different questions; I keep the conclusion within the evidence that supports it.
+I define the system boundaries, invariants, constraints, acceptance criteria and verification strategy. AI coding agents assist with inspection, implementation and iteration, including the standalone C++ samples. I remain responsible for architectural decisions, review and acceptance.
+
+Source control, tests, CI, review and evidence checks remain acceptance gates. Source inspection, local tests, hosted CI, release artifacts and live verification answer different questions; I keep each conclusion within its supporting evidence. [Contingram’s AI-assisted engineering notes](https://github.com/Nima0101/contingram/blob/main/docs/ai-assisted-engineering.md) document this workflow in a public project.
 
 Good discussion topics include a crash between submission and acknowledgement, accounting recovery after model completion, publication while ingestion is incomplete, or an account change during token refresh. Each tests whether the state model remains understandable when the happy path stops.
 
