@@ -6,6 +6,30 @@ I am a software / systems engineer in Stockholm, Sweden. My work centers on stat
 
 The public tools featured here make selected parts of that work directly inspectable. The broader engineering experience described here spans mobility, commerce, education data and B2B product workflows. I focus on the mechanisms behind those systems: explicit contracts, durable intent, bounded resources and understandable failure states. The most useful technical conversation starts with an invariant and follows it through a transition, a failure and recovery.
 
+## Selected systems built by Nima Khaki
+
+### Bistam — Rider, Driver and Partner
+
+**Created & engineered by Nima Khaki.** Mobility, delivery and commerce work spans backend APIs, PostgreSQL/Supabase, payment reconciliation, location, native iOS with Swift/SwiftUI and device reliability. Rider/Driver session ownership and stale-response fencing complement merchant workflows and recovery after uncertain device submissions.
+
+### Antagningsdata — data acquisition to reviewed publication
+
+**Created & engineered by Nima Khaki.** Python ingestion, PostgreSQL/SQL and TypeScript/Next.js connect raw provenance and lineage, deterministic identity, quarantine/review and immutable publication. Last-known-good versions and transactional outbox intent keep accepted data distinct from incomplete acquisition.
+
+### Cederdalen — B2B product workflows
+
+**Created & engineered by Nima Khaki.** Next.js/React/TypeScript and PostgreSQL/Supabase connect typed catalogs, transactional quote/order state and server-authoritative validation. Accessible labels, error associations and focus handling sit alongside technical SEO, canonical metadata and structured data.
+
+These summaries reflect supplied implementation evidence and recorded checks, not a claim of current deployment or release status. Product source and sites are not linked here. Standalone systems samples retain separate provenance from product implementations.
+
+## Flagship: Contingram — AI-agent systems and verification
+
+**Created and maintained by Nima Khaki.** An AI agent can invoke a tool with real side effects and then lose the observation. Blind replay can duplicate the action. [Contingram](https://github.com/Nima0101/contingram) models finite agent-tool contracts and synthesizes a bounded safe recovery policy when it can establish one. An independent verifier checks policy or bounded-obstruction artifacts without invoking the search algorithm; parsing and model lowering remain shared assumptions.
+
+Bounded computation may return **UNKNOWN**, which establishes neither a safe policy nor an obstruction. Results are relative to the supplied model and decision horizon. This Rust library and CLI works offline and never executes modeled external tools. It is verification infrastructure, not a chatbot or a general autonomous agent.
+
+[Release v0.1.0](https://github.com/Nima0101/contingram/releases/tag/v0.1.0) · [Architecture](https://github.com/Nima0101/contingram/blob/main/docs/architecture.md) · [Verification](https://github.com/Nima0101/contingram/blob/main/docs/verification.md) · [CI](https://github.com/Nima0101/contingram/actions/workflows/ci.yml)
+
 ## Systems and reliability
 
 [PersistScope](https://github.com/Nima0101/persistscope) is a C++20 library and CLI for model checking small persistence protocols. It explores modeled crash outcomes and produces replayable counterexamples. File-data durability and directory durability are separate: a file sync and a directory sync constrain different events. An exhausted search budget yields an incomplete result. The [architecture](https://github.com/Nima0101/persistscope/blob/main/docs/architecture.md) explains the model assumptions that give a result its meaning.
@@ -106,9 +130,9 @@ The verification and delivery toolkit includes CMake, CTest, XCTest, GitHub Acti
 
 Start with the invariant, identify its owner and define the failure states. Make uncertainty explicit, bound resource use and keep recovery repeatable. Then build checks that can contradict the design: competing owners, expired leases, account changes, interrupted writes, malformed data and delayed events. A useful counterexample is small enough to explain and replay.
 
-I define the system boundaries, invariants, constraints, acceptance criteria and verification strategy. AI coding agents assist with inspection, implementation and iteration, including the standalone C++ samples. I remain responsible for architectural decisions, review and acceptance.
+AI agents have assisted implementation and review, including the standalone C++ samples. I define the problem, system and risk boundaries, constraints, acceptance criteria and invariants. Agents may research, inspect, propose and implement in bounded workspaces; explicit MCP/tool boundaries and orchestration limits constrain authority.
 
-Source control, tests, CI, review and evidence checks remain acceptance gates. Source inspection, local tests, hosted CI, release artifacts and live verification answer different questions; I keep each conclusion within its supporting evidence. [Contingram’s AI-assisted engineering notes](https://github.com/Nima0101/contingram/blob/main/docs/ai-assisted-engineering.md) document this workflow in a public project.
+Important root-cause claims require code, log, test, provider or runtime evidence. Generated changes face relevant tests, static analysis, fuzz/security checks and CI. Difficult architecture and OSS selection receive independent/adversarial review. I own architecture, scope, acceptance, merge and release decisions. Runtime/release evidence governs claims such as fixed, supported and released; clean-room and public/private boundaries remain explicit. Source inspection, local tests, historical CI, release artifacts and live verification answer different questions. [Contingram’s AI-assisted engineering notes](https://github.com/Nima0101/contingram/blob/main/docs/ai-assisted-engineering.md) document this workflow in a public project.
 
 Good discussion topics include a crash between submission and acknowledgement, accounting recovery after model completion, publication while ingestion is incomplete, or an account change during token refresh. Each tests whether the state model remains understandable when the happy path stops.
 

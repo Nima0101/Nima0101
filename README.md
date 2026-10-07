@@ -1,67 +1,67 @@
 # Nima Khaki
 
-**Software / Systems Engineer · Reliable systems, backend & data**
+**Software / Systems Engineer · State, ownership & recovery**
 
-I build around state, ownership and recovery: from crash-consistency tools to payment workflows, data publication, native applications and constrained AI tooling.
+I create systems that make failure understandable: AI-agent verification tools, backend workflows, data platforms and native applications.
 
-Stockholm, Sweden · [Email](mailto:nima.khakii@outlook.com) · [Engineering index](ENGINEERING_INDEX.md) · [Portfolio](https://nima0101.github.io/)
+Stockholm, Sweden · [Portfolio](https://nima0101.github.io/) · [Engineering index](ENGINEERING_INDEX.md) · [Email](mailto:nima.khakii@outlook.com)
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/verification-dark.svg">
-  <img src="assets/verification-light.svg" alt="A state trace branches at a failure and returns to an earlier state for replay." width="840">
-</picture>
+## Contingram — AI-agent systems & verification
 
-## Contingram · AI-agent systems & verification
+<img src="assets/projects/contingram.webp" alt="Contingram: blue interwoven loop emblem" width="200" height="200">
 
-**Created and maintained by Nima Khaki · Rust · Offline library & CLI**
+**Created and maintained by Nima Khaki.**
 
-[Contingram](https://github.com/Nima0101/contingram) asks: **can an agent safely finish when a tool response is lost?** A timeout can hide a completed effect; a retry can duplicate it. I built Contingram to explore that recovery boundary through finite tool contracts and independently checked evidence.
+An AI agent can call a tool with real side effects, then lose the response. Blind replay may duplicate the action. **[Contingram](https://github.com/Nima0101/contingram)** models finite agent-tool contracts and uncertain observations, synthesizing a bounded safe recovery policy when it can establish one. An independent verifier checks the artifact. Bounded computation may return **UNKNOWN**.
 
-- **Bounded recovery-policy synthesis:** derive observation-based decisions that keep every possible modeled world safe and reach a known goal within a decision horizon.
-- **Independent artifact verification:** a separate verifier checks policies and bounded no-policy certificates without calling the solver. Parsing and model lowering remain shared trust boundaries.
-- **Explicit uncertainty:** exhausted search node/work limits return `UNKNOWN`, with no certificate. A checked no-policy result applies only to the supplied model and horizon.
+This Rust library and CLI works offline and never executes modeled external tools. Results are relative to the supplied model and decision horizon; it is verification infrastructure, not a chatbot or general autonomous agent.
 
-The engineering work spans Rust, deterministic state-machine modeling and replay, failure recovery, adversarial tests, reference oracles, fuzzing, CI/security checks and release engineering. Contingram analyzes contracts offline; it never invokes tools or authorizes execution. Its results do not establish that a model faithfully describes a real service.
+[Architecture](https://github.com/Nima0101/contingram/blob/main/docs/architecture.md) · [Verification](https://github.com/Nima0101/contingram/blob/main/docs/verification.md) · [CI](https://github.com/Nima0101/contingram/actions/workflows/ci.yml) · [Release](https://github.com/Nima0101/contingram/releases/tag/v0.1.0)
 
-[Source & demo](https://github.com/Nima0101/contingram) · [Model & limits](https://github.com/Nima0101/contingram/blob/main/docs/architecture.md) · [Verification](https://github.com/Nima0101/contingram/blob/main/docs/verification.md) · [CI](https://github.com/Nima0101/contingram/actions/workflows/ci.yml) · [Security](https://github.com/Nima0101/contingram/actions/workflows/security.yml) · [Releases](https://github.com/Nima0101/contingram/releases)
+## Public systems tools
 
-## More open source · created & maintained by Nima Khaki
+<img src="assets/projects/persistscope-hidweave.webp" alt="PersistScope and hidweave project emblems" width="240" height="135">
 
-**[PersistScope](https://github.com/Nima0101/persistscope) · C++20** — A crash-consistency model checker for small persistence protocols. Produces replayable counterexamples and reports incomplete exploration when a budget is exhausted. File data and directory durability have distinct modeled boundaries.
+**[PersistScope](https://github.com/Nima0101/persistscope) · C++20** — Crash-consistency model checker for small persistence protocols: replayable counterexamples and witnesses, bounded exploration and explicit incomplete outcomes.
 
-[Model & limits](https://github.com/Nima0101/persistscope/blob/main/docs/architecture.md) · [CI](https://github.com/Nima0101/persistscope/actions/workflows/ci.yml) · [Releases](https://github.com/Nima0101/persistscope/releases)
+[Model](https://github.com/Nima0101/persistscope/blob/main/docs/architecture.md) · [CI](https://github.com/Nima0101/persistscope/actions/workflows/ci.yml) · [Releases](https://github.com/Nima0101/persistscope/releases)
 
-**[hidweave](https://github.com/Nima0101/hidweave) · Rust** — An offline library and CLI for Human Interface Device (HID) report contracts. Shows how identical bytes change meaning under a descriptor change, including an X/Y swap that leaves report length unchanged.
+**[hidweave](https://github.com/Nima0101/hidweave) · Rust** — HID report-contract analysis explaining how identical bytes change meaning after descriptor changes. Unsupported semantics fail explicitly.
 
-[Contract & limits](https://github.com/Nima0101/hidweave/blob/main/docs/contract.md) · [CI](https://github.com/Nima0101/hidweave/actions/workflows/ci.yml) · [Releases](https://github.com/Nima0101/hidweave/releases)
+[Contract](https://github.com/Nima0101/hidweave/blob/main/docs/contract.md) · [CI](https://github.com/Nima0101/hidweave/actions/workflows/ci.yml) · [Releases](https://github.com/Nima0101/hidweave/releases)
 
-PersistScope and hidweave have Linux, macOS and Windows releases, with public CI covering tests, sanitizers, fuzzing checks and CodeQL analysis.
+Created and maintained by Nima Khaki. Both publish Linux, macOS and Windows binaries; public CI includes tests, sanitizers, fuzzing checks and security analysis.
 
-## Product engineering · software by Nima Khaki
+## Selected systems built by Nima Khaki
 
-| Project | Engineering focus | Explore |
-| --- | --- | --- |
-| **Bistam product family** | Mobility and commerce workflows; payment reconciliation, state ownership, native session and location lifecycle. | [Product](https://bistam.com/) · [Engineering](https://nima0101.github.io/#bistam) |
-| **Antagningsdata** | Swedish education data; acquisition, canonical identity, provenance and reviewed publication. | [Product](https://antagningsdata.se/) · [Data engineering](https://nima0101.github.io/#antagningsdata) |
-| **Cederdalen** | B2B catalog and quote workflows; typed data, customer/staff boundaries and versioned acceptance. | [Product](https://cederdalen.com/) · [Product engineering](https://nima0101.github.io/#cederdalen) |
+### Bistam · Rider / Driver / Partner
 
-These are public product experiences. The engineering notes distinguish implementation review, recorded checks and deployment evidence.
+<p><img src="assets/projects/bistam.webp" alt="Bistam Rider" width="30%"> <img src="assets/projects/bistam-driver.webp" alt="Bistam Driver" width="30%"> <img src="assets/projects/bistam.webp" alt="Bistam suite mark for Partner" width="30%"></p>
 
-## Broader engineering work
+Rider · Driver · Partner (left to right).
 
-- **Systems & reliability:** C++ ownership, concurrency, deterministic state machines, durable journals and failure-path verification.
-- **AI & agent tooling:** recoverable AI accounting, schema-validated MCP tools, bounded execution and evidence checks.
-- **Backend & data:** TypeScript/Node.js APIs and workers; payment reconciliation; Python ingestion, PostgreSQL transactions, provenance and reviewed publication.
-- **Native, product & platform:** Swift/SwiftUI session and location lifecycle; commerce workflows; resource-aware CI and release-linked observability.
+**Created & engineered by Nima Khaki.** Rider, Driver and Partner experiences spanning backend APIs, PostgreSQL/Supabase, payment reconciliation, mobility/location, native iOS with Swift/SwiftUI and reliable device execution.
 
-The [engineering index](ENGINEERING_INDEX.md) explains these mechanisms, their verification scope and the decisions behind them.
+### Antagningsdata
 
-## How I work
+<img src="assets/projects/antagningsdata.webp" alt="Antagningsdata wordmark" width="350">
 
-I define the system boundaries, invariants, constraints, acceptance criteria and verification strategy. AI coding agents assist with inspection, implementation and iteration. I remain responsible for architectural decisions, review and acceptance.
+**Created & engineered by Nima Khaki.** Data ingestion, provenance/lineage, deterministic identity and reviewed publication using Python, PostgreSQL/SQL and TypeScript/Next.js.
 
-Source control, tests, CI, review and evidence checks remain acceptance gates. I distinguish source inspection, local test results, hosted CI, release artifacts and live verification; each supports a different claim. [Contingram’s AI-assisted engineering notes](https://github.com/Nima0101/contingram/blob/main/docs/ai-assisted-engineering.md) document that workflow in a public project.
+### Cederdalen
 
-Core technologies: **C++20, Rust, TypeScript / Node.js, Python, PostgreSQL / SQL, Swift / SwiftUI, Next.js / React.**
+<img src="assets/projects/cederdalen.webp" alt="Cederdalen cedar emblem and wordmark" width="350">
 
-For engineering conversations: [nima.khakii@outlook.com](mailto:nima.khakii@outlook.com).
+**Created & engineered by Nima Khaki.** B2B product workflows in Next.js/React/TypeScript and PostgreSQL/Supabase: transactional quote/order state, validation, accessibility and technical SEO.
+
+## AI-assisted engineering, human accountability
+
+I define the problem, system and risk boundaries, constraints, acceptance criteria and invariants. AI agents research, inspect, propose and implement in bounded workspaces, with explicit MCP/tool contracts and orchestration limits.
+
+Root-cause claims require code, log, test, provider or runtime evidence. Generated changes face relevant tests, static analysis, fuzz/security checks and CI. Difficult architecture and OSS choices receive independent/adversarial review.
+
+I own architecture, scope, acceptance, merge and release decisions. Runtime/release evidence governs “fixed”, “supported” and “released”; clean-room and public/private boundaries remain explicit. [Contingram’s AI-assisted engineering notes](https://github.com/Nima0101/contingram/blob/main/docs/ai-assisted-engineering.md) document this workflow in a public project.
+
+**Core:** C++20 · Rust · TypeScript / Node.js · Python · PostgreSQL · Swift / SwiftUI. My [engineering index](ENGINEERING_INDEX.md) connects distributed systems, reliability, data engineering, developer tooling, CI/CD and observability to concrete mechanisms.
+
+[Portfolio](https://nima0101.github.io/) · [nima.khakii@outlook.com](mailto:nima.khakii@outlook.com)
