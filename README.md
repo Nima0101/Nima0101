@@ -36,7 +36,7 @@ Created and maintained by Nima Khaki. Both publish Linux, macOS and Windows bina
 
 ### Bistam · Rider / Driver / Partner
 
-<p><img src="assets/projects/bistam.webp" alt="Bistam Rider" width="30%"> <img src="assets/projects/bistam-driver.webp" alt="Bistam Driver" width="30%"> <img src="assets/projects/bistam.webp" alt="Bistam suite mark for Partner" width="30%"></p>
+<p><img src="assets/projects/bistam.webp" alt="Bistam Rider" width="30%"> <img src="assets/projects/bistam-driver.webp" alt="Bistam Driver" width="30%"> <img src="assets/projects/bistam-partner.webp" alt="Bistam Partner" width="30%"></p>
 
 Rider · Driver · Partner (left to right).
 
