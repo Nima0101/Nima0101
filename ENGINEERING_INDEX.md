@@ -120,9 +120,19 @@ An offline library and CLI for bounded recovery-policy synthesis over finite age
 
 [Source and demo](https://github.com/Nima0101/contingram) · [Architecture](https://github.com/Nima0101/contingram/blob/main/docs/architecture.md) · [Verification](https://github.com/Nima0101/contingram/blob/main/docs/verification.md) · [CI](https://github.com/Nima0101/contingram/actions/workflows/ci.yml)
 
+## Unreleased reference integrations
+
+Unreleased, locally tested control-plane reference: Java 21/Spring Boot, PostgreSQL transactional intent/audit/outbox state, JWT authorization, Kafka delivery/replay and OpenTelemetry. Real-container tests cover concurrent duplicates, authorization failures, broker outage and checked recovery. It returns recommendations and never executes tools. [Source and review](https://github.com/Nima0101/contingram/tree/feat/employment-signal-expansion-20261007/platform)
+
+Unreleased safe-update reference: signed C++20/OpenSSL 3 staging, atomic trial activation, health checks and restart rollback. Process-interruption tests and a broken/fixed model pair connect implementation to explicit assumptions. The reference uses POSIX APIs and does not claim physical power-loss durability. [Source and review](https://github.com/Nima0101/persistscope/pull/10)
+
+Unreleased firmware CI integration: deterministic versioned JSON, strict or explicit report-addition policies, a baseline/candidate runner and a reusable GitHub Action. Negative controls reject semantic changes and unsupported descriptors. This is modeled contract gating, not a device-compatibility guarantee. [Source and review](https://github.com/Nima0101/hidweave/pull/5)
+
+These additions have local verification evidence; hosted checks are visible on their branches and PRs. They are not merged release features, deployments or adoption claims.
+
 ## Languages and technologies
 
-C++20 and Rust support systems and developer-tool work. TypeScript, JavaScript and Node.js support APIs, workers and application contracts; Python supports acquisition and data processing. PostgreSQL, SQL and Supabase support transactional state and access controls. Swift, SwiftUI, actors, Keychain and CoreLocation support native lifecycle work. Next.js, React, HTML and CSS connect backend state to product interfaces.
+C++20 and Rust support systems and developer-tool work. Java 21 and Spring Boot support the separate Contingram control-plane reference. TypeScript, JavaScript and Node.js support APIs, workers and application contracts; Python supports acquisition and data processing. PostgreSQL, SQL and Supabase support transactional state and access controls. Swift, SwiftUI, actors, Keychain and CoreLocation support native lifecycle work. Next.js, React, HTML and CSS connect backend state to product interfaces.
 
 The verification and delivery toolkit includes CMake, CTest, XCTest, GitHub Actions, Docker, sanitizers, fuzzing, CodeQL and Sentry. I choose tools for the boundary being tested: memory lifetime, state transition, input contract, deployment identity or observed behavior.
 
