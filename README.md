@@ -18,15 +18,23 @@ This Rust library and CLI works offline and never executes modeled external tool
 
 [Architecture](https://github.com/Nima0101/contingram/blob/main/docs/architecture.md) · [Verification](https://github.com/Nima0101/contingram/blob/main/docs/verification.md) · [CI](https://github.com/Nima0101/contingram/actions/workflows/ci.yml) · [Release](https://github.com/Nima0101/contingram/releases/tag/v0.1.0)
 
+Unreleased, locally tested control-plane reference: Java 21/Spring Boot, PostgreSQL transactional intent/audit/outbox state, JWT authorization, Kafka delivery/replay and OpenTelemetry. Real-container tests cover concurrent duplicates, authorization failures, broker outage and checked recovery. It returns recommendations and never executes tools.
+
+[Reference source and verification](https://github.com/Nima0101/contingram/tree/feat/employment-signal-expansion-20261007/platform)
+
 ## Public systems tools
 
 <img src="assets/projects/persistscope-hidweave.webp" alt="PersistScope and hidweave project emblems" width="240" height="135">
 
 **[PersistScope](https://github.com/Nima0101/persistscope) · C++20** — Crash-consistency model checker for small persistence protocols: replayable counterexamples and witnesses, bounded exploration and explicit incomplete outcomes.
 
+Unreleased safe-update reference: signed C++20/OpenSSL 3 staging, atomic trial activation, health checks and restart rollback. Process-interruption tests and a broken/fixed model pair connect implementation to explicit assumptions. The reference uses POSIX APIs and does not claim physical power-loss durability. [Implementation PR](https://github.com/Nima0101/persistscope/pull/10)
+
 [Model](https://github.com/Nima0101/persistscope/blob/main/docs/architecture.md) · [CI](https://github.com/Nima0101/persistscope/actions/workflows/ci.yml) · [Releases](https://github.com/Nima0101/persistscope/releases)
 
 **[hidweave](https://github.com/Nima0101/hidweave) · Rust** — HID report-contract analysis explaining how identical bytes change meaning after descriptor changes. Unsupported semantics fail explicitly.
+
+Unreleased firmware CI integration: deterministic versioned JSON, strict or explicit report-addition policies, a baseline/candidate runner and a reusable GitHub Action. Negative controls reject semantic changes and unsupported descriptors. This is modeled contract gating, not a device-compatibility guarantee. [Implementation PR](https://github.com/Nima0101/hidweave/pull/5)
 
 [Contract](https://github.com/Nima0101/hidweave/blob/main/docs/contract.md) · [CI](https://github.com/Nima0101/hidweave/actions/workflows/ci.yml) · [Releases](https://github.com/Nima0101/hidweave/releases)
 
@@ -62,6 +70,6 @@ Root-cause claims require code, log, test, provider or runtime evidence. Generat
 
 I own architecture, scope, acceptance, merge and release decisions. Runtime/release evidence governs “fixed”, “supported” and “released”; clean-room and public/private boundaries remain explicit. [Contingram’s AI-assisted engineering notes](https://github.com/Nima0101/contingram/blob/main/docs/ai-assisted-engineering.md) document this workflow in a public project.
 
-**Core:** C++20 · Rust · TypeScript / Node.js · Python · PostgreSQL · Swift / SwiftUI. My [engineering index](ENGINEERING_INDEX.md) connects distributed systems, reliability, data engineering, developer tooling, CI/CD and observability to concrete mechanisms.
+**Core:** C++20 · Rust · Java 21 · TypeScript / Node.js · Python · PostgreSQL · Swift / SwiftUI. My [engineering index](ENGINEERING_INDEX.md) connects distributed systems, reliability, data engineering, developer tooling, CI/CD and observability to concrete mechanisms.
 
 [Portfolio](https://nima0101.github.io/) · [nima.khakii@outlook.com](mailto:nima.khakii@outlook.com)
