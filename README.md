@@ -6,6 +6,11 @@ I build around state, ownership and recovery: from crash-consistency tools to pa
 
 Stockholm, Sweden · [Email](mailto:nima.khakii@outlook.com) · [Engineering index](ENGINEERING_INDEX.md) · [Portfolio](https://nima0101.github.io/)
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/verification-dark.svg">
+  <img src="assets/verification-light.svg" alt="A state trace branches at a failure and returns to an earlier state for replay." width="840">
+</picture>
+
 ## Contingram · AI-agent systems & verification
 
 **Created and maintained by Nima Khaki · Rust · Offline library & CLI**
