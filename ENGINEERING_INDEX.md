@@ -6,6 +6,14 @@ I am a software / systems engineer in Stockholm, Sweden. My work centers on stat
 
 The public tools featured here make selected parts of that work directly inspectable. The broader engineering experience described here spans mobility, commerce, education data and B2B product workflows. I focus on the mechanisms behind those systems: explicit contracts, durable intent, bounded resources and understandable failure states. The most useful technical conversation starts with an invariant and follows it through a transition, a failure and recovery.
 
+## Created product systems
+
+**Bistam — Created and engineered by Nima Khaki.** A multi-surface mobility and commerce platform spanning Rider, Driver and Partner. The engineering scope includes backend APIs, PostgreSQL/security boundaries, payment reconciliation, Swift/SwiftUI native applications, maps/location, partner/device execution, CI and observability.
+
+**Antagningsdata — Created and engineered by Nima Khaki.** A Swedish education-data platform connecting Python ingestion, source provenance and lineage, deterministic identity, normalization/quarantine and reviewed publication. PostgreSQL, durable jobs, leases and recovery support TypeScript/Next.js readers.
+
+**Cederdalen — Created and engineered by Nima Khaki.** B2B product workflows in Next.js, React, TypeScript and PostgreSQL/Supabase. Transactional quote/order flow, server validation, security/RLS, accessibility and technical SEO have source-reviewed implementation evidence; historical build checks retain their separate scope.
+
 ## Systems and reliability
 
 [PersistScope](https://github.com/Nima0101/persistscope) is a C++20 library and CLI for model checking small persistence protocols. It explores modeled crash outcomes and produces replayable counterexamples. File-data durability and directory durability are separate: a file sync and a directory sync constrain different events. An exhausted search budget yields an incomplete result. The [architecture](https://github.com/Nima0101/persistscope/blob/main/docs/architecture.md) explains the model assumptions that give a result its meaning.
@@ -20,7 +28,7 @@ My applied-AI work includes backend controls around entitlement, resource budget
 
 Developer tooling has a related authority problem: an AI agent's proposed action needs a defined contract. I have worked with Model Context Protocol (MCP) interfaces that validate schemas, check repository identity, restrict commands and support cancellable leased tasks. Shell-free execution, time/output limits, process-group cancellation and output redaction keep tool execution bounded.
 
-For a public model-relative example, [Contingram](https://github.com/Nima0101/contingram) explores recovery policies for finite tool contracts and checks the resulting artifacts independently of its search. It runs offline without invoking tools.
+I created and maintain [Contingram](https://github.com/Nima0101/contingram), a Rust library and CLI for offline bounded recovery-policy synthesis over finite AI-agent tool contracts. An agent calls a payment-like tool and loses the response: the effect may be committed or absent. Contingram determines whether an observation-based policy can safely reach the modeled goal within a decision horizon and emits independently verifiable evidence. It never invokes production tools itself. A separate verifier avoids calling the solver; parsing and model lowering remain shared assumptions. Exhausted compute or exploration budgets return UNKNOWN. A completed search may establish that no policy exists within the chosen horizon; neither result establishes unrestricted real-world safety.
 
 Verification also needs identity. A result tied to one revision or workspace must not silently authorize changes to another. Evidence checks and explicit capability boundaries make that distinction reviewable. My focus here is the reliability of AI integrations and engineering automation: the same retry, ownership and recovery questions that matter in other backend systems.
 
@@ -78,11 +86,15 @@ I use negative-path verification for wrong-context credentials, stale work, malf
 
 ### PersistScope · C++20
 
+Created and maintained by Nima Khaki
+
 A bounded crash-consistency model checker with replayable witnesses, explicit incomplete outcomes and separate file/namespace durability semantics. It operates on supplied in-memory protocol models. An independent small-protocol oracle, sanitizer runs and fuzzing checks complement its tests.
 
 [Source and examples](https://github.com/Nima0101/persistscope) · [Engineering deep dive](https://github.com/Nima0101/persistscope/blob/main/docs/engineering-deep-dive.md) · [CI](https://github.com/Nima0101/persistscope/actions/workflows/ci.yml) · [Releases](https://github.com/Nima0101/persistscope/releases)
 
 ### hidweave · Rust
+
+Created and maintained by Nima Khaki
 
 An offline library and CLI that compares Human Interface Device report contracts and decodes identical bytes under different descriptors. An X/Y usage swap can change meaning without changing report length. Equivalent encodings normalize under the documented contract; unsupported constructs fail explicitly. Independent parser comparisons, exhaustive small-field decoding checks and fuzzing exercise complementary properties. Its contract comparison is a review signal with documented limits on what it establishes about device compatibility.
 
@@ -91,6 +103,8 @@ An offline library and CLI that compares Human Interface Device report contracts
 PersistScope and hidweave publish Linux, macOS and Windows binaries with checksums. Their source, tests, CI and release pages provide distinct ways to inspect the work.
 
 ### Contingram · Rust
+
+Created and maintained by Nima Khaki
 
 An offline library and CLI for bounded recovery-policy synthesis over finite agent-tool contracts. Decisions depend on observations, including cases where a lost response conceals an effect. A separate verifier checks policy or bounded-obstruction artifacts without invoking the search algorithm. Parsing and model lowering remain shared assumptions. Compute exhaustion returns unknown; results describe the supplied model and decision horizon. Policies do not execute or authorize real tool calls.
 
@@ -106,9 +120,11 @@ The verification and delivery toolkit includes CMake, CTest, XCTest, GitHub Acti
 
 Start with the invariant, identify its owner and define the failure states. Make uncertainty explicit, bound resource use and keep recovery repeatable. Then build checks that can contradict the design: competing owners, expired leases, account changes, interrupted writes, malformed data and delayed events. A useful counterexample is small enough to explain and replay.
 
-AI agents have assisted implementation and review, including the standalone C++ samples. My responsibilities are constraints, architecture, review, acceptance and verification. Generated changes need executable evidence and adversarial review. Source inspection, local tests, historical CI, release artifacts and live verification answer different questions; I keep the conclusion within the evidence that supports it.
+I use OpenAI Codex/ChatGPT and other coding agents as constrained engineering collaborators, including assistance with the standalone C++ samples. I define system boundaries, failure models, invariants, acceptance criteria, security constraints and evidence requirements. Agents help research alternatives, inspect systems, implement changes, generate test hypotheses, challenge designs and perform bounded verification. My responsibilities include architecture, review, acceptance and release. Generated changes need executable evidence and adversarial review. Source inspection, local tests, historical CI, release artifacts and live verification answer different questions; I keep the conclusion within the evidence that supports it.
 
 Good discussion topics include a crash between submission and acknowledgement, accounting recovery after model completion, publication while ingestion is incomplete, or an account change during token refresh. Each tests whether the state model remains understandable when the happy path stops.
+
+Research → boundaries and invariants → implementation → adversarial review → deterministic/property/fuzz/security tests → hosted CI → runtime/public evidence → release. Checks are selected for the system and claim. AI assists the engineering loop; executable evidence decides what is accepted.
 
 ## Contact and links
 
