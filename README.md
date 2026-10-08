@@ -6,6 +6,11 @@ I create systems that make failure understandable: AI-agent verification tools, 
 
 Stockholm, Sweden · [Portfolio](https://nima0101.github.io/) · [Engineering index](ENGINEERING_INDEX.md) · [Email](mailto:nima.khakii@outlook.com)
 
+## What I've worked on over the last few days
+
+<!--START_SECTION:waka-->
+<!--END_SECTION:waka-->
+
 ## Contingram — AI-agent systems & verification
 
 <img src="assets/projects/contingram.webp" alt="Contingram: blue interwoven loop emblem" width="200" height="200">

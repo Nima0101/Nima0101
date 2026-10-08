@@ -1,0 +1,42 @@
+name: Update profile coding activity
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */12 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    name: Refresh WakaTime language stats
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check WakaTime configuration
+        id: wakatime
+        shell: bash
+        env:
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+        run: |
+          if [ -n "$WAKATIME_API_KEY" ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::WAKATIME_API_KEY is not configured; profile update skipped."
+          fi
+
+      - name: Update README coding activity
+        if: steps.wakatime.outputs.ready == 'true'
+        uses: athul/waka-readme@8539bedb8277066fc9fe1b47d1f9b108eb866494
+        with:
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+          SECTION_NAME: waka
+          TIME_RANGE: last_7_days
+          LANG_COUNT: "5"
+          SHOW_TITLE: "false"
+          SHOW_TIME: "true"
+          SHOW_TOTAL: "false"
+          CODE_LANG: txt
+          COMMIT_MESSAGE: "chore(profile): refresh coding activity"
